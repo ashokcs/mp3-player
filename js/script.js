@@ -80,11 +80,13 @@ function playSong(){
 function muteOrUnmute(){
     if(song.muted){
         song.muted = false;
-        volumeSection.innerHTML = '<i class="fa fa-volume-mute fa-2x"></i>';
+        volumeSection.innerHTML = '<i class="fa fa-volume-up fa-2x"></i>';
+        console.log('unmute');
     }
     else{
         song.muted = true;
-        volumeSection.innerHTML = '<i class="fa fa-volume-up fa-2x"></i>';
+        volumeSection.innerHTML = '<i class="fa fa-volume-mute fa-2x"></i>';
+        console.log('mute');
     }
 }
 
