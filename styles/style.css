@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-around;
     display: flex;
+    max-width: 300px;
 }
 
 .playtime_section {
@@ -27,7 +28,7 @@
     flex-direction: row;
     align-items: center;
     justify-content:space-around;
-    background-color: rgb(233, 222, 243);
+    background-color: rgb(137, 179, 241);
     display: flex;
 }
 
@@ -84,7 +85,7 @@ i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
     grid-template-columns: auto auto;
     grid-template-rows: 300px;
     grid-gap: 10px;
-    margin: 10em;
+    margin: 5em 5em 5em 10em;
     padding: 10px;
     align-items: ce;
 }
@@ -95,7 +96,7 @@ i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
 }
 
 .album_cover_section{
-    margin: 50px 20px 0px 150px;
+    margin: 0px 20px 0px 150px;
 }
 
 .slides {
@@ -138,7 +139,7 @@ p{
     -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    background: #3b3434;
+    background: rgb(137, 179, 241);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -220,4 +221,21 @@ p{
   
   .album-image:hover + #play_hover{
       display: inline-block;
+  }
+
+  #current_cover_image{
+      width: 100%;
+      height: 100%;
+  }
+
+  #coverimage{
+      border-radius: 20px;
+  }
+
+  #current_song_name, #current_song_name{
+      margin: 1em 0 1em 0;
+  }
+
+  h3, h4{
+      margin: 0;
   }

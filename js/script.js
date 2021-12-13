@@ -3,24 +3,30 @@ let song;
 let playStatus = false;
 let seek_value = 0;
 let playList;
+let index = 0;
 let songsListUL = document.querySelector('.slides');
 const currentPlayTime = document.querySelector(".current-playtime");
 const volumeSection = document.querySelector('.volume_section');
 const totalPlayTime = document.querySelector(".total-playtime");
 const play = document.querySelector(".play");
+const currentSongName =   document.querySelector("#current_song_name");
+const currentArtistName =   document.querySelector("#current_artist_name");
+const currentCoverImage =   document.querySelector("#current_cover_image");
 const seekerSlider = document.querySelector(".seeker_slider");
 const volume_controller = document.querySelector(".volume_controller");
 
 function selectSong(songsList){
     playList = songsList;
     console.log(songsList);
-    songName = songsList[0].filename;
+    index = 0;
+    songName = songsList[index].filename;
     song = new Audio("../media/"+songName);
     generatePlayList(songsList);
 }
 
-function playSelectedSong(index){
+function playSelectedSong(selectedIndex){
     pauseCurrentSong();
+    index = selectedIndex;
     song = new Audio("../media/" + playList[index].filename);
     playSong();
 }
@@ -30,7 +36,7 @@ function generatePlayList(songsList){
     for (i = 0; i < numberOfListItems; ++i) {
         document.querySelector('#song'+(i+1)).innerHTML = "<div class='row'>" +
         "<div class='column left'><img class='grid-image' src='./media/grid.png' width='30' height='30'/> "+
-        "<img class='album-image' src='"+ songsList[i].path +"' width='30' height='30'/>" + 
+        "<img class='album-image' src='"+ songsList[i].path +"' onclick=playSelectedSong("+ (i) + ") width='30' height='30'/>" + 
         "<button id='play_hover' class='fa fa-play-circle fa-3x' onclick=playSelectedSong("+ (i) + ")></button></div>" +
         "<div class='column right'><div class='row'>" +
         "<div class='scolumn sleft'>" + songsList[i].name + 
@@ -60,11 +66,13 @@ function pauseCurrentSong(){
     play.innerHTML = '<i class="fa fa-play-circle fa-3x"></i>';
 }
 
-function playSong()
-{
+function playSong(){
     song.play();
     playStatus = true;
     play.innerHTML = '<i class="fa fa-pause-circle fa-3x"></i>';
+    currentSongName.innerHTML = "<h3>" + playList[index].name +"</h3>" ;
+    currentArtistName.innerHTML = "<h4>" + playList[index].artist +"</h4>" ;
+    currentCoverImage.innerHTML = "<img id='coverimage' src='"+ playList[index].path +"' width='300' height='300'/>" ;
     setTotalDurationOfSong();
     setInterval(updateSeekValue, 1000);
 }
