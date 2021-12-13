@@ -1,0 +1,12 @@
+[
+    {"name" : "Believer ft. Baygel", "filename" : "believer.mp3",  "artist" : "Imagine Dragons", "duration": "03:24",
+    "path":"./media/believer.jpg"},
+    {"name" : "Love Story", "filename" : "loveStory.mp3", "artist" : "Sean Paul", "duration": "04:44",
+    "path":"./media/love.png"}, 
+    {"name" : "Papaoutai ft. Stroame", "filename" : "papaoutai.mp3", "artist" : "Stroame", "duration": "03:52",
+    "path":"./media/papa.jpg"},
+    {"name" : "SOS", "filename" : "sos.mp3", "artist" : "Indila", "duration": "04:47",
+    "path":"./media/sos.jpg"},
+    {"name" : "Unstoppable", "filename" : "unstoppable.mp3", "artist" : "Riggirandom", "duration": "04:06",
+    "path":"./media/unstoppable.jpg"}
+]

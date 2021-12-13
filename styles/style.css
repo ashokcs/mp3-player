@@ -1,0 +1,223 @@
+.controls_section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.playtime_section {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+}
+
+.volume_section{
+    float: right;
+}
+
+.playtime-divider, .total-playtime, .current-playtime{
+    float:left;
+    font-family: 'Copperplate', Impact, fantasy;
+    padding: 0.1em;
+}
+
+.navbar {
+    width: 100%;
+    overflow: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    background-color: rgb(233, 222, 243);
+    display: flex;
+}
+
+.logo_section{
+    padding-right: 3em;
+}
+
+.navbar img{
+    float: left;
+}
+  
+.navbar a {
+    float: left;
+    padding: 18px;
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.search input[type=text]{
+    width:460px;
+    height:25px;
+    border-radius:25px;
+    border: none;
+    padding: 1.5em;
+}
+      
+.search{
+    float:right;
+    text-align: center;
+}
+  
+.navbar a:hover {
+    background-color: rgb(166, 123, 170);
+    color: white;
+}
+
+i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+.slider {
+    width: 25%;
+}
+
+
+#playlist {
+    width: 350px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 300px;
+    grid-gap: 10px;
+    margin: 10em;
+    padding: 10px;
+    align-items: ce;
+}
+  
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 0;
+}
+
+.album_cover_section{
+    margin: 50px 20px 0px 150px;
+}
+
+.slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+}
+.slide {
+    padding: 1px;
+    background-color: #2F2F2F;
+    margin: 0;
+    text-align: left;
+    color: #FFF;
+    border: 1px solid #444;
+}
+.slide-placeholder {
+	background: #DADADA;
+	position: relative;
+}
+.slide-placeholder:after {
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 15px;
+	background-color: #FFF;
+}
+li{
+    text-align: left;
+}
+p{
+    font-size: 0.7em;
+    text-align: left;
+    color: aquamarine;
+}
+
+.seeker_slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #3b3434;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.seeker_slider:hover {
+    opacity: 1;
+}
+  
+.seeker_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 15px;
+    background: aquamarine;
+    cursor: pointer;
+} 
+  
+.seeker_slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 1px;
+    height: 3.5em;
+  }
+  
+  .left {
+    width: 20%;
+  }
+  
+  .right {
+    width: 80%;
+  }
+  
+  .scolumn {
+    float: left;
+    padding: 1px;
+    height: 3.5em;
+  }
+  .sleft {
+    width: 75%;
+  }
+  
+  .sright {
+    width: 25%;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .grid-image{
+      padding: 10px 0 0 10px;
+  }
+
+  .album-image{
+      float: right;
+      position: relative;
+      margin: 10px 20px 0 0;
+  }
+
+  #play_hover {
+    position: absolute;
+    display: none;
+  }
+  
+  .album-image:hover + #play_hover{
+      display: inline-block;
+  }

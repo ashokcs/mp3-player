@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Juke Paradise</title>
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+<body>
+    
+<div class="navbar">  
+    <div class="logo_section">
+        <img class="logo" height=43 width=40 src="./media/logo.jpg"/>
+    </div>  
+    <div class="nav_menu">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+        <a class="inactive" href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search Songs" name="search">
+    </div>
+    <div class="login_section">
+        <a class="inactive" href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+</div>
+
+<div class="grid-container">
+    <div class="album_cover_section">
+        <div class="cover-image"></div>
+        <div class="song">Song Name</div>
+        <div class="artist">Artist Name</div>
+        <div class="playtime_section"> 
+            <h2 class="current-playtime">00:00</h2>
+            <h2 class="playtime-divider">/</h2>
+            <h2 class="total-playtime">00:00</h2>
+        </div>
+        <div class="controls_section">
+            <div class="previous" onclick="playPrevious()">
+                <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            <div class="play" onclick="playOrPause()">
+                <i class="fa fa-play-circle fa-3x"></i>
+            </div>
+            <div class="next" onclick="playNext()">
+                <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+            <input type="range" class="volume_controller" min="1" max="100" value="75" onchange="controlVolume()">
+            <div class="volume_section" onclick="muteOrUnmute()">
+                <i class="fa fa-volume-up fa-2x"></i>
+            </div>   
+        </div>
+        <div class="seeker_section">
+            <input type="range" min="1" max="100" value="0" class="seeker_slider" onchange="seekAt()">
+         </div>     
+    </div>
+    <div id="playlist">
+        <ul class="slides">
+            <li id="song1" class="slide slide1">Song 1</li>
+            <li id="song2" class="slide slide2">Song 2</li>
+            <li id="song3" class="slide slide3">Song 3</li>
+            <li id="song4" class="slide slide4">Song 4</li>
+            <li id="song5" class="slide slide5">Song 5</li>
+          </ul>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="./js/script.js"></script>
+
+</body>
+</html>
