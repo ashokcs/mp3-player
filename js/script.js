@@ -91,13 +91,14 @@ function muteOrUnmute(){
 }
 
 function updateSeekValue() {
-    let seekAtValue = song.currentTime * (200 / song.duration);
+    let seekAtValue = song.currentTime * (100 / song.duration);
     seekerSlider.value = seekAtValue;
-    currentPlayTime.textContent = convertValueToTime(seekAtValue);
-    console.log(song.currentTime);
-    console.log(song.duration);
-    console.log(seekAtValue);
+    currentPlayTime.textContent = convertValueToTime(song.currentTime * (200 / song.duration));
     setTotalDurationOfSong();
+    if(seekerSlider.value >= 100){
+        playSelectedSong(index+1);
+        index = index + 1;
+    }
 }
 
 Number.prototype.pad = function(size) {
