@@ -20,14 +20,14 @@ function selectSong(songsList){
     console.log(songsList);
     index = 0;
     songName = songsList[index].filename;
-    song = new Audio("../media/"+songName);
+    song = new Audio("./media/"+songName);
     generatePlayList(songsList);
 }
 
 function playSelectedSong(selectedIndex){
     pauseCurrentSong();
     index = selectedIndex;
-    song = new Audio("../media/" + playList[index].filename);
+    song = new Audio("./media/" + playList[index].filename);
     playSong();
 }
 
