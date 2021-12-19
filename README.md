@@ -15,7 +15,7 @@ An elegant MP3 Player using HTML, CSS and Java Script.
 - [@ashokcs](https://www.github.com/ashokcs)
 
 ## Demo
-![Sample Screenshot Page](./demo.jpg)
+![Sample Screenshot Page](./media/demo.jpg)
 
 ## Deployment
 
