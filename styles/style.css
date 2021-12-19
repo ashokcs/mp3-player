@@ -97,14 +97,14 @@ i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
     grid-template-columns: auto auto;
     grid-template-rows: 300px;
     grid-gap: 10px;
-    margin: 5em 5em 5em 10em;
+    margin: 15em 5em 5em 10em;
     padding: 10px;
     align-items: ce;
 }
   
 .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 2px 0;
+    padding: 2px 0 2px 0;
 }
 
 .album_cover_section{

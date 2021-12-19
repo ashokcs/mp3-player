@@ -8,5 +8,13 @@
     {"name" : "SOS", "filename" : "sos.mp3", "artist" : "Indila", "duration": "04:47",
     "path":"./media/sos.jpg"},
     {"name" : "Unstoppable", "filename" : "unstoppable.mp3", "artist" : "Riggirandom", "duration": "04:06",
-    "path":"./media/unstoppable.jpg"}
+    "path":"./media/unstoppable.jpg"},
+    {"name" : "Uptown Funk", "filename" : "uptownfunk.mp3", "artist" : "Bruno Mars", "duration": "04:30",
+    "path":"./media/uptownfunk.jpeg"},
+    {"name" : "Cheap Thrills ft.Sia", "filename" : "cheap.mp3", "artist" : "Sean Paul", "duration": "04:21",
+    "path":"./media/cheap.jpeg"},
+    {"name" : "Shakira Waka Waka", "filename" : "wakawaka.mp3", "artist" : "Shakira", "duration": "03:30",
+    "path":"./media/wakawaka.jpeg"},
+    {"name" : "K'naan Waving Flag", "filename" : "wavinflag.mp3", "artist" : "Knaan", "duration": "03:44",
+    "path":"./media/wavinflag.jpeg"}
 ]
