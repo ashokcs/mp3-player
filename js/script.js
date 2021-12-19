@@ -1,9 +1,11 @@
+//Reads the value of Songs Data JSON file and populate the Play list. 
 fetch('./js/data.json').then(results => results.json()).then(data => selectSong(data));
 let song;
 let playStatus = false;
 let seek_value = 0;
 let playList;
 let index = 0;
+
 let songsListUL = document.querySelector('.slides');
 const currentPlayTime = document.querySelector(".current-playtime");
 const volumeSection = document.querySelector('.volume_section');
@@ -15,6 +17,7 @@ const currentCoverImage =   document.querySelector("#current_cover_image");
 const seekerSlider = document.querySelector(".seeker_slider");
 const volume_controller = document.querySelector(".volume_controller");
 
+//A function to play Initial song whenever the Mp3 Player gets loaded.
 function selectSong(songsList){
     playList = songsList;
     console.log(songsList);
@@ -24,6 +27,7 @@ function selectSong(songsList){
     generatePlayList(songsList);
 }
 
+//To play the particular Song.
 function playSelectedSong(selectedIndex){
     pauseCurrentSong();
     index = selectedIndex;
@@ -31,6 +35,7 @@ function playSelectedSong(selectedIndex){
     playSong();
 }
 
+//To render the songs list in Movable Sliding list.
 function generatePlayList(songsList){
     const numberOfListItems =songsList.length;
     for (i = 0; i < numberOfListItems; ++i) {
@@ -51,6 +56,7 @@ function generatePlayList(songsList){
     }
 }
 
+//To Play or Pause the song.
 function playOrPause(){
     if(playStatus){
         pauseCurrentSong();
@@ -60,12 +66,14 @@ function playOrPause(){
     }
 }
 
+//To pause the current song.
 function pauseCurrentSong(){
     song.pause();
     playStatus = false;
     play.innerHTML = '<i class="fa fa-play-circle fa-3x"></i>';
 }
 
+//Renders the value of the current song, like Song name, Artist name, Song Durations.
 function playSong(){
     song.play();
     playStatus = true;
@@ -74,9 +82,11 @@ function playSong(){
     currentArtistName.innerHTML = "<h4>" + playList[index].artist +"</h4>" ;
     currentCoverImage.innerHTML = "<img id='coverimage' src='"+ playList[index].path +"' width='300' height='300'/>" ;
     setTotalDurationOfSong();
+    //To update the slider value every second, this timer runs.
     setInterval(updateSeekValue, 1000);
 }
 
+//Mute or Unmute function depends on the value of the flag.
 function muteOrUnmute(){
     if(song.muted){
         song.muted = false;
@@ -90,6 +100,7 @@ function muteOrUnmute(){
     }
 }
 
+//Update the value of the slide seek value every minute when the song plays.
 function updateSeekValue() {
     let seekAtValue = song.currentTime * (100 / song.duration);
     seekerSlider.value = seekAtValue;
@@ -107,6 +118,7 @@ Number.prototype.pad = function(size) {
     return s;
 }
 
+//Changing the slider to listen from particular time of song.
 function seekAt() {
     let seekAtValue = song.duration * (seekerSlider.value / 100);
     song.currentTime = seekAtValue;
@@ -118,18 +130,22 @@ function setTotalDurationOfSong(){
     totalPlayTime.textContent = convertValueToTime(totalDuration);
 }
 
+//To show the time value as Time Formated.
 function convertValueToTime(value){
     var minutes = Math.floor(value / 60);
     var seconds = value - minutes * 60;
     return zeroPad(minutes, 2) + " : "+ zeroPad(seconds.toFixed(0), 2);
 }
 
+//Change the volume of the song player
 function controlVolume() {
     song.volume = volume_controller.value / 100;
 }
 
+//This function shows time as formatted value. Like 6:14 -> 06:14
 const zeroPad = (num, places) => String(num).padStart(places, '0')
 
+//Used JQuery only for non-functionality requirements (Just to move / change the order of songs list items.)
 $(".slides").sortable({
     placeholder: 'slide-placeholder',
    axis: "y",
